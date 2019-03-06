@@ -296,11 +296,6 @@ const purchases = [{
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal = purchases.filter(purchase => purchase.owner == 'Bob')
-let val = 0;
+let bobsTotal = purchases.filter(purchase => purchase.owner == 'Bob').reduce((acc, current) => acc + current.price, 0)
 
-for (let item of bobsTotal) {
-  val += item.price
-}
-bobsTotal = val
 console.log(bobsTotal)
