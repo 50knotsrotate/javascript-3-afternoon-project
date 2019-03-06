@@ -23,10 +23,13 @@ var carDetails = {
 
 //Code Here
 
-var copy = {
-  ...carDetails
-}
-console.log(copy)
+var {
+  color,
+  make,
+  model,
+  year
+} = carDetails
+
 
 
 
@@ -84,7 +87,20 @@ function totalPopulation(obj) {
 */
 
 
+function ingredients(obj) {
 
+
+  var {
+    carb,
+    fat,
+    protein
+  } = obj
+  var array = [carb, fat, protein];
+  return array
+
+
+
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -101,17 +117,21 @@ function totalPopulation(obj) {
 */
 
 function largeNumbers({
-  one,
-  two,
-  three
+  first,
+  second,
+  third
 }) {
 
-  //I'm not proud of these last twp. Its late. I'm tired. I'll consult a mentor in the morning. 
+  var arr = [first, second, third]
 
-  return one < two && one < three ? one : two < one && two < three ? two : three
-
-
+  return arr.sort(function (a, b) {
+    return a - b
+  })[0]
 }
+
+
+//I'm not proud of these last two. Its late. I'm tired. I'll consult a mentor in the morning.
+
 
 
 
@@ -128,6 +148,7 @@ function numberGroups({
   b,
   c
 }) {
-  return a.length > b.length && a.length > b.length ? a : b.length > a.length && b.length > c.length ? b : c
+  return a.length > b.length && a.length > c.length ? a : b.length > a.length && b.length > c.length ? b : c
+  //a is greater than b & c                 b is greater than a and c                   else, return c
 
 }
