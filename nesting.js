@@ -9,8 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var employees = [
-  {
+var employees = [{
     "firstName": "Von",
     "lastName": "Budibent",
     "email": "vbudibent0@163.com",
@@ -50,7 +49,14 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater() {
+  for (let employee of employees) {
+    employee.firstName == 'Theo' ? employees.splice(2, 1) : employee.firstName == 'Lorie' ? employee.department = 'HR' : null
+  }
+
+  return employees
+
+}
 
 
 
@@ -68,20 +74,19 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
-
-
+function removeDuplicates(array) {
+  return array.filter((item, index) => array.indexOf(item) == index)
+}
 
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
 var cat = {
   name: 'Fluffy',
-  catFriends: [
-    {
+  catFriends: [{
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -96,9 +101,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -109,8 +114,7 @@ var myCar = {
   make: 'Toyota',
   model: 'Corolla',
   year: 1992,
-  accidents: [
-    {
+  accidents: [{
       date: '3/15/93',
       damage: '$5,000',
       atFaultForAccident: true
@@ -140,12 +144,22 @@ var myCar = {
 
 //Code Here
 
+function recordCleaner() {
+  for (let accident of myCar.accidents) {
+    accident.atFaultForAccident = false
+  }
+}
+
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [
+  [1, 2, 3, 4],
+  [5, 6],
+  [7, 8, 9, 10, 11]
+];
 // Do not edit the code above.
 
 /*
@@ -156,7 +170,12 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
+function looper() {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      numsArr[i][j] % 2 == 0 ? numsArr[i][j] = 'even' : numsArr[i][j] = 'odd'
+    }
+  }
+  return numsArr
 
-//Code Here
-
-
+}
