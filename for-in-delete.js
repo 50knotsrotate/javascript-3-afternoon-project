@@ -39,8 +39,12 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
+function showValues(obj) {
+  var concated = ''
+  for (let thing in obj) {
+    concated += obj[thing]
+  }
+  return concated
 }
 
 
@@ -53,7 +57,15 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10(obj) {
+
+  for (let item in obj) {
+    if (obj[item] > 10) {
+      obj[item] = 0
+    }
+  }
+  return obj
+}
 
 
 
@@ -65,7 +77,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj) {
+  for (let item in obj) {
+    obj[item] *= 2
+  }
+  return obj
+}
 
 
 
@@ -79,7 +96,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj) {
+  var str = ''
+
+
+  for (let item in obj) {
+    item.toString().indexOf('sh') == 0 ? str += obj[item] : null
+  }
+  return str
+}
 
 
 
@@ -99,7 +124,7 @@ function showValues( obj ) {
 //   delete deleteAllThethings[key]
 // }
 
-// console.log(deleteAllThethings)
+
 
 
 
@@ -110,7 +135,11 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+function removePassword(obj) {
+
+  delete obj.password
+  return obj
+}
 
 
 
@@ -129,7 +158,9 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for (let property in deleteTheBigNumbers) {
+  deleteTheBigNumbers[property] > 100 ? delete deleteTheBigNumbers[property] : null
+}
 
 
 
@@ -142,7 +173,12 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(obj) {
+  for (let item in obj) {
+    item.toString().split('')[0] == 'k' ? delete obj[item] : null
+  }
+  return obj
+}
 
 
 
@@ -157,6 +193,9 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
-
-
+function hiddenTreasure(obj) {
+  for (let item in obj) {
+    !obj[item].includes('treasure', 0) ? delete obj[item] : null
+  }
+  return obj
+}
