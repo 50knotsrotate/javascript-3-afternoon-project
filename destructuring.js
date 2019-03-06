@@ -23,6 +23,11 @@ var carDetails = {
 
 //Code Here
 
+var copy = {
+  ...carDetails
+}
+console.log(copy)
+
 
 
 ////////// PROBLEM 2 //////////
@@ -33,9 +38,14 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
+function greeting(obj) {
+  var {
+    firstName,
+    lastName,
+    title
+  } = obj
+
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -53,9 +63,15 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+function totalPopulation(obj) {
+  var {
+    utah,
+    california,
+    texas,
+    arizona
+  } = obj
+  return utah + california + texas + arizona
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -67,7 +83,6 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
 
 
 
@@ -85,7 +100,18 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers({
+  one,
+  two,
+  three
+}) {
+
+  //I'm not proud of these last twp. Its late. I'm tired. I'll consult a mentor in the morning. 
+
+  return one < two && one < three ? one : two < one && two < three ? two : three
+
+
+}
 
 
 
@@ -97,6 +123,11 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups({
+  a,
+  b,
+  c
+}) {
+  return a.length > b.length && a.length > b.length ? a : b.length > a.length && b.length > c.length ? b : c
 
-
+}
